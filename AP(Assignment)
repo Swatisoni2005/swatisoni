@@ -1,0 +1,51 @@
+// Abstract class Shape3D
+abstract class Shape3D {
+    // Abstract method to calculate volume
+    public abstract double calculateVolume();
+    
+    // Abstract method to calculate surface area
+    public abstract double calculateSurfaceArea();
+}
+
+// Subclass Cube that extends Shape3D
+class Cube extends Shape3D {
+    private double side;
+
+    // Constructor to initialize the side length of the cube
+    public Cube(double side) {
+        this.side = side;
+    }
+
+    // Implementing the calculateVolume method
+    @Override
+    public double calculateVolume() {
+        return Math.pow(side, 3); // Volume = side^3
+    }
+
+    // Implementing the calculateSurfaceArea method
+    @Override
+    public double calculateSurfaceArea() {
+        return 6 * Math.pow(side, 2); // Surface Area = 6 * side^2
+    }
+}
+
+// Main class to test the Cube class
+public class Main {
+    public static void main(String[] args) {
+        // Create a Cube object with side length 3
+        Cube cube = new Cube(3);
+
+        // Calculate and display the volume and surface area
+        System.out.println("Cube with side length: " + cube.side);
+        System.out.printf("Volume: %.2f\n", cube.calculateVolume());
+        System.out.printf("Surface Area: %.2f\n", cube.calculateSurfaceArea());
+    }
+}
+
+
+
+
+
+Cube with side length: 3.0
+Volume: 27.00
+Surface Area: 54.00
